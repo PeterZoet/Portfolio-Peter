@@ -1,0 +1,53 @@
+.coverImg{
+    background-image: url("../media/cover.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    object-fit: cover;
+    height: 100vh;
+    box-shadow: rgb(44, 68, 201) 0px 0px 10px 10px;
+}
+
+.coverText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var( --header-color) ;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-family: cursive;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+
+}
+.container2{
+    box-shadow: rgb(44, 68, 201) 0px 0px 10px 10px;
+    background: var(--schuin-background-color);
+    width:110%;
+    top:-5%;
+    margin-left:-5%;
+    transform:rotate(6deg);
+    height: min-content;
+    z-index: 0;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    overflow: hidden;
+}
+.container2 p , .container2 h1 , .container2 h3{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    transform:rotate(-6deg);
+}
+
+.schuin {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
