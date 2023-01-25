@@ -18,6 +18,10 @@
 </head>
 <body>
 
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- https://www.apachefriends.org/download.html -->
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
 <?php
     include 'includes/header.php';
 ?>
@@ -25,6 +29,7 @@
     <div class="coverImg">
         <div class="coverText">
             <h1>Hi, I'm Peter Zoetekouw</h1>
+            <hr>
             <h2>Software Developer</h2>
         </div>
     </div>
@@ -71,7 +76,9 @@
             <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet nisl. Sed euismod, nisl nec</p>
           </div>
           <div class="col-md-4"> 
-          <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet nisl. Sed euismod, nisl nec</p><p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet nisl. Sed euismod, nisl nec</p>
+          <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet nisl. Sed euismod, nisl nec</p>
+          <hr>
+          <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet nisl. Sed euismod, nisl nec</p>
           <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultricies lacinia, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet nisl. Sed euismod, nisl nec</p>
           </div>
           <div class="col-md-4"> 
@@ -82,7 +89,9 @@
     </div>
 </main>
 
-<my-footer></my-footer>
+<?php
+    include 'includes/footer.php';
+?>
 
     
 </body>

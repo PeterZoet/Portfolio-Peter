@@ -40,13 +40,12 @@ html {
     padding: 10px;
 }
 
-footer {
-    background-color: var(--footer-background-color);
+.footer {
+    box-shadow: rgb(44, 68, 201) 0px 0px 10px 10px;
+    background: var(--footer-background-color);
     color: var(--footer-color);
-    font-family: cursive;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 0;
-    margin: 0;
-    display: flex;
+    width: 100vw;
+    z-index: 0;
+    margin-top: 10vh;
+    overflow: hidden;
 }
