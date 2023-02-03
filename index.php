@@ -8,9 +8,7 @@
     <meta name="keywords" content="software developer, portfolio, web development">
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/assets.js"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -23,7 +21,7 @@
 <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
 <?php
-    include 'includes/header.php';
+    include 'includes/dbConnectie.php';
 ?>
 <main>
     <div class="coverImg">
@@ -31,10 +29,14 @@
             <h1>Hi, I'm Peter Zoetekouw</h1>
             <hr>
             <h2>Software Developer</h2>
+            <a href='#content'><span>&#10137;</span></a>
         </div>
     </div>
+    <?php
+        include 'includes/header.php';
+    ?>
        <!-- normal text -->
-      <div class="container" style="margin-top: 5vh;">
+      <div class="container" id="content" style="margin-top: 5vh;">
         <h3>Lorem Ipsum</h3>
         <div class="row">
           <div class="col-md-4">
