@@ -27,11 +27,12 @@
             <a href='#content'><span>&#10137;</span></a>
         </div>
     </div>
+    <div id="content"></div>
     <?php
         include 'includes/header.php';
     ?>
        <!-- normal text -->
-      <div class="container" id="content" style="margin-top: 5vh;">
+      <div class="container" style="margin-top: 5vh;">
         <h3>Lorem Ipsum</h3>
         <div class="row">
           <div class="col-md-4">
