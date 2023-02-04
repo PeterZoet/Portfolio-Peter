@@ -18,4 +18,3 @@ if ($mysqli->connect_errno) {
     echo "Error: Failed to make a MySQL connection";
     exit;
 }
-

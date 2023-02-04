@@ -4,7 +4,7 @@
     <ul>
       <li><a href='index.php'>Home</a></li>
       <li><a href='projects.php'>Projects</a></li>
-      <li><a href=''>Contact Us</a></li>
+      <li><a href='dashboard.php'>Dashboard</a></li>
     </ul>
   </nav>
 </header>
