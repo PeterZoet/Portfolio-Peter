@@ -17,48 +17,61 @@
 </head>
 <body>
 <?php
-        include 'includes/header.php';
-        include 'includes/dbConnectie.php';
+    // als er een fout is, geef dan een foutmelding
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
+    include 'includes/header.php';
+    require 'includes/dbConnectie.php';
+
 ?>
-    <main>
-        <form method='post'>
-            <div class="form-group">
-                <label for="projectName">Project name</label>
-                <input type="text" class="form-control" id="projectName" placeholder="Enter project name">
-            </div>
-            <div class="form-group">
-                <label for="projectDescription">Project description</label>
-                <textarea class="form-control" id="projectDescription" rows="6"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="projectType">Project type</label>   
-                <input type="text" class="form-control" id="projectType" placeholder="Enter project type">
-            </div>
-            <div class="form-group">
-                <label for="projectLink">Project link</label>
-                <input type="text" class="form-control" id="projectLink" placeholder="Enter project link">
-            </div>
-            <div class="form-group">
-                <label for="projectImage">Project image</label>
-                <input type="file" class="form-control" id="projectImage" placeholder="Enter project image">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </main>
+
+<form method='post' action="create.php">
+    <div class="form-group">
+        <label for="projectName">Projectnaam</label>
+        <input type="text" class="form-control" id="projectName" placeholder="Projectnaam" name='projectName'>
+    </div>
+    <div class="form-group">
+        <label for="projectDescription">Projectbeschrijving</label>
+        <textarea class="form-control" id="projectDescription" rows="3" name='projectDescription'></textarea>
+    </div>
+    <div class="form-group">
+        <label for="projectType">Projecttype</label>
+        <input type="text" class="form-control" id="projectType" placeholder="Projecttype" name='projectType'>
+    </div>
+    <div class="form-group">
+        <label for="projectLink">Projectlink</label>
+        <input type="text" class="form-control" id="projectLink" placeholder="Projectlink" name='projectLink'>
+    </div>
+    <div class="form-group">
+        <label for="projectImage">Projectafbeelding</label>
+        <input type="file" class="form-control" id="projectImage" placeholder="Projectafbeelding" name='projectImage'>
+    </div>
+    <input type='submit' name='submit' value='Toevoegen'>
+</form>   
+
 <?php
 
-    if (isset ($_POST['submit'])) {
+    if(isset($_POST['submit'])) {
         $projectName = $_POST['projectName'];
         $projectDescription = $_POST['projectDescription'];
         $projectType = $_POST['projectType'];
         $projectLink = $_POST['projectLink'];
         $projectImage = $_POST['projectImage'];
 
-        $sql = "INSERT INTO projects (projectName, projectDescription, projectType, projectLink, projectImage) VALUES ('$projectName', '$projectDescription', '$projectType', '$projectLink', '$projectImage')";
-        
+        $sql = "INSERT INTO Projects (projectName, projectDescription, projectType, projectLink, projectImage) VALUES ('$projectName', '$projectDescription', '$projectType', '$projectLink', '$projectImage')";
         $result = mysqli_query($mysqli, $sql);
-    }
 
+        if($result) {
+            echo "Project is toegevoegd";
+        } else {
+            echo "<div class='alert alert-danger' role='alert'>";
+            echo $sql;
+            echo mysqli_error($mysqli) . "</div>";
+        }
+    }
+?>
+<?php
     include 'includes/footer.php';
 ?>
 </body>

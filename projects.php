@@ -18,22 +18,34 @@
 <body>
     <?php
         include 'includes/header.php';
-        include 'includes/dbConnectie.php';
+        require 'includes/dbConnectie.php';
     ?>
     <main id='main'>
-        <h1 class='titel'>Projects</h1>
-            <div>
-                <h2>Project 1</h2>
-                <p>Project 1 description</p>    
-            </div>
-            <div>
-                <h2>Project 2</h2>
-                <p>Project 2 description</p>
-            </div>
-            <div>
-                <h2>Project 3</h2>
-                <p>Project 3 description</p>
-            </div>
+    <?php
+            $sql = "SELECT * FROM Projects";
+            $result = mysqli_query($mysqli, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<div class='project'>";
+                echo "<h2>" . $row['projectName'] . "</h2>";
+                echo "<p>" . $row['projectDescription'] . "</p>";
+                echo "<p><b>Type:</b> " . $row['projectType'] . "</p>";
+                echo "<a href='" . $row['projectLink'] . "' target='_blank'>" . $row['projectLink'] . "</a>";
+                echo  "<br>";
+                echo  "<br>";
+                echo "<img src='media/" . $row['projectImage'] . "' alt='project image' class='uploadImg'>";
+                echo  "<br>";
+                echo  "<br>";
+                echo "<a href='edit.php?id=" . $row['ID'] . "' class='btn btn-primary'>Edit</a>";
+                echo "<a href='delete.php?id=" . $row['ID'] . "' class='btn btn-danger'>Delete</a>";
+                echo "</div>";
+            }
+        } else {
+            echo "0 results";
+        }
+
+        ?>  
     </main>
     
 <?php

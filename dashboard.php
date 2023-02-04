@@ -22,7 +22,9 @@
     ?>
     <main>
         <h1>Dashboard</h1>
-        <a href="create.php" class="btn btn-primary">Create</a>
+        <!-- <a href="create.php" class="btn btn-primary">Create</a> -->
+
+
     </main>
 
 
