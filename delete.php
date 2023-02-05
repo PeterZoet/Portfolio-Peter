@@ -19,34 +19,34 @@
     <?php
         include 'includes/header.php';
         require 'includes/dbConnectie.php';
-    ?>
-    <main id='main'>
-    <?php
-            $sql = "SELECT * FROM Projects";
-            $result = mysqli_query($mysqli, $sql);
 
-        if (mysqli_num_rows($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class='project'>";
-                echo "<h2>" . $row['projectName'] . "</h2>";
-            echo "<hr>";
-                echo "<p>" . $row['projectDescription'] . "</p>";
-                echo "<p><b>Type:</b> " . $row['projectType'] . "</p>";
-                echo "<a href='" . $row['projectLink'] . "' target='_blank'>" . $row['projectLink'] . "</a>";
-                echo  "<br>";
-                echo  "<br>";
-                echo "<img src='media/" . $row['projectImage'] . "' alt='project image' class='uploadImg'>";
-                echo "</div>";
+        if (!isset($_SESSION['username'])) {
+            header('Location: login.php');
+        }
+    ?>
+    <main>
+        <h1>Are you sure you want to delete the project?</h1>
+        <form action="delete.php?id=<?php echo $_GET['id'] ?>" method="POST">
+            <input type="submit" name="submit" value="Yes" class="btn btn-danger">
+            <br>
+            <br>
+            <a href="dashboard.php" class="btn btn-primary">No</a>
+        </form>
+    </main>
+    <?php
+        // if user clicks on yes, delete the project
+        if (isset($_POST['submit'])) {
+            $id = $_GET['id'];
+            $sql = "DELETE FROM Projects WHERE id = $id";
+            $result = mysqli_query($mysqli, $sql);
+            if ($result) {
+                header('Location: dashboard.php');
+            } else {
+                echo 'query error: ' . mysqli_error($mysqli);
             }
-        } else {
-            echo "0 results";
         }
 
-        ?>  
-    </main>
-    
-<?php
-    include 'includes/footer.php';
-?>
+        include 'includes/footer.php';
+    ?>
 </body>
 </html>

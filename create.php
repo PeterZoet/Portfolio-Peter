@@ -24,31 +24,37 @@
     include 'includes/header.php';
     require 'includes/dbConnectie.php';
 
+    if (!isset($_SESSION['username'])) {
+        header('Location: login.php');
+    }
+
 ?>
 
-<form method='post' action="create.php">
-    <div class="form-group">
-        <label for="projectName">Projectnaam</label>
-        <input type="text" class="form-control" id="projectName" placeholder="Projectnaam" name='projectName'>
-    </div>
-    <div class="form-group">
-        <label for="projectDescription">Projectbeschrijving</label>
-        <textarea class="form-control" id="projectDescription" rows="3" name='projectDescription'></textarea>
-    </div>
-    <div class="form-group">
-        <label for="projectType">Projecttype</label>
-        <input type="text" class="form-control" id="projectType" placeholder="Projecttype" name='projectType'>
-    </div>
-    <div class="form-group">
-        <label for="projectLink">Projectlink</label>
-        <input type="text" class="form-control" id="projectLink" placeholder="Projectlink" name='projectLink'>
-    </div>
-    <div class="form-group">
-        <label for="projectImage">Projectafbeelding</label>
-        <input type="file" class="form-control" id="projectImage" placeholder="Projectafbeelding" name='projectImage'>
-    </div>
-    <input type='submit' name='submit' value='Toevoegen'>
-</form>   
+<main>
+    <form method='post' action="create.php">
+        <div class="form-group">
+            <label for="projectName">Projectnaam</label>
+            <input type="text" class="form-control" id="projectName" placeholder="Projectnaam" name='projectName'>
+        </div>
+        <div class="form-group">
+            <label for="projectDescription">Projectbeschrijving</label>
+            <textarea class="form-control" id="projectDescription" rows="3" name='projectDescription'></textarea>
+        </div>
+        <div class="form-group">
+            <label for="projectType">Projecttype</label>
+            <input type="text" class="form-control" id="projectType" placeholder="Projecttype" name='projectType'>
+        </div>
+        <div class="form-group">
+            <label for="projectLink">Projectlink</label>
+            <input type="text" class="form-control" id="projectLink" placeholder="Projectlink" name='projectLink'>
+        </div>
+        <div class="form-group">
+            <label for="projectImage">Projectafbeelding</label>
+            <input type="file" class="form-control" id="projectImage" placeholder="Projectafbeelding" name='projectImage'>
+        </div>
+        <input type='submit' name='submit' value='Toevoegen'>
+    </form>
+</main>   
 
 <?php
 

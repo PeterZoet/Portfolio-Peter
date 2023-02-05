@@ -21,7 +21,7 @@ form {
     height: auto;
 }
 form input {
-    width: 100%;
+    width: 20vw;
     height: 30px;
     margin: 10px 0;
     border-radius: 5px;
