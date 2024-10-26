@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/x-icon" href="media/favicon.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,8 +35,6 @@
     }
 
     if (isset($_SESSION['username'])) {
-
-        echo "<h1>Dashboard</h1>";
         echo "<p>Welkom " . $_SESSION['username'] . "</p>";
         echo "<p><a href='logout.php' class='btn btn-danger'>Uitloggen</a></p>";
         echo "<br>";

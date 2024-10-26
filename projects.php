@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/x-icon" href="media/favicon.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,10 +33,10 @@
             echo "<hr>";
                 echo "<p>" . $row['projectDescription'] . "</p>";
                 echo "<p><b>Type:</b> " . $row['projectType'] . "</p>";
-                echo "<a href='" . $row['projectLink'] . "' target='_blank'>" . $row['projectLink'] . "</a>";
-                echo  "<br>";
-                echo  "<br>";
+                
                 echo "<img src='media/" . $row['projectImage'] . "' alt='project image' class='uploadImg'>";
+                
+                echo "<p></p><a href='" . $row['projectLink'] . "' target='_blank'  class='uploadLink'>" . $row['projectLink'] . "</a>";
                 echo "</div>";
             }
         } else {

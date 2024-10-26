@@ -46,3 +46,13 @@ form textarea {
     min-height: 0 5vh;
     border-radius: 10px;
 }
+
+.uploadImg {
+    margin-top: 5vh;
+    margin-left: 0vw;
+}
+
+.uploadLink {
+    margin-top: 5vh;
+    margin-left: 0vw;
+}

@@ -40,7 +40,7 @@
     margin-bottom: 20vh;
     overflow: hidden;
 }
-.container2 p , .container2 h1 , .container2 h3{
+.container2 p , .container2 h1 , .container2 h3, .container2 hr {
     margin-left: 10vw;
     margin-right: 10vw;
     transform:rotate(-6deg);
@@ -69,7 +69,11 @@ span:hover{
     .container2 {
         transform: none;
     }
-    .container2 p , .container2 h1 , .container2 h3{
+    .container2 p , .container2 h1 , .container2 h3, .container2 hr {
         transform: none;
     }
+}
+
+.schuineImg {
+    width: 10vw;
 }
